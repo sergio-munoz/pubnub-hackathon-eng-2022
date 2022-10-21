@@ -24,6 +24,12 @@ const computeSelectedInstances = () => {
 
 const selectedInstances = ref<string[]>([])
 
+const removeInstance = (index: number) => {
+  const filteredInstances = [...selectedInstances.value]
+  filteredInstances.splice(index, 1)
+  selectedInstances.value = filteredInstances
+}
+
 const optionsArray = [
   {
     title: "1) Choose a tool",
@@ -52,7 +58,7 @@ const optionsArray = [
       <button class="primary" @click="computeSelectedInstances">Find Instance</button>
     </div>
     <div class="cards-container">
-      <CardName v-for="user_id in selectedInstances" :key="user_id" :user_id="user_id" />
+      <CardName v-for="(user_id, index) in selectedInstances" :key="user_id" :user_id="user_id" @remove="() => removeInstance(index)" :index="index"/>
     </div>
     {{ selectedInstances }}
   </div>
