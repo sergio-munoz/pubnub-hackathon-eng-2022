@@ -1,4 +1,4 @@
-interface PN {
+export interface PubNubInstance {
     user_id: string
     tool: Tool
     presence: boolean
@@ -17,11 +17,11 @@ export enum Channel {
     RANDOM = 'test.Uz#77dD1uG', 
 }  
     
-export const instances: PN[] = [
+export const instances: PubNubInstance[] = [
     {
         user_id: 'UUID',
-        tool: Tool.SUBSCRIBE,
-        presence: true,
+        tool: Tool.PUBLISH,
+        presence: false,
         channel: Channel.TEST,
         async: false
     },
