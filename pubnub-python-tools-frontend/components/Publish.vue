@@ -1,18 +1,35 @@
-<script lang="ts">
-
-import PPT from "./PPT.vue";
-
-</script>
+<!--
+//<script setup lang="ts">
+//import PPT from "./PPT.vue";
+//import { LazyPPT } from '#components'
+//const show = ref(false)
+//</script>
+-->
 
 <template>
-    <div>
+    <div class="publish-container">
         <!-- Suspense component  to show users  -->
         <Suspense>
-            <template #fallback>
-                <div>loading</div>
+            <template #default>
+                <PPT/>
             </template>
-            <h1> PPT </h1>
-            <PPT></PPT>
+            <template #fallback>
+                <div>Loading...</div>
+            </template>
         </Suspense>
     </div>
 </template>
+
+<style scoped>
+.publish-container {
+    background: white;
+    outline: 0.15rem solid rgb(149, 87, 89);
+    border: none;
+    padding: 0.75rem;
+    width: 12rem;
+    font-size: 1rem;
+    color: rgb(5, 5, 38);
+    cursor: pointer;
+    font-weight: 200;
+}
+</style>

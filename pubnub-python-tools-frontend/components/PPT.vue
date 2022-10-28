@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <p>output: {{ output }}</p>
+    <div class="ppt">
+        <h4>Output</h4>
+        <p>{{ output }}</p>
     </div>
 </template>
 
@@ -56,3 +57,17 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.ppt {
+    background: white;
+    outline: 0.15rem solid blue;
+    border: none;
+    padding: 0.75rem;
+    width: 12rem;
+    font-size: 1rem;
+    color: rgb(5, 5, 38);
+    cursor: pointer;
+    font-weight: 200;
+}
+</style>

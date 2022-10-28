@@ -9,5 +9,11 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.12"
-  }
+  },
+  "dependencies": {
+    "python-shell": "^3.0.1",
+    "pythonia": "^1.0.0",
+    "virtualenv": "*"
+  },
+  "type": "module"
 }

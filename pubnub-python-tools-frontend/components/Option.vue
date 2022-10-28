@@ -2,13 +2,9 @@
     <div class="option-container">
         <h4>{{ option.title }}</h4>
         <div class="option-buttons">
-            <button
-            v-for="(value, index) in option.buttons"
-            :key="value"
-            class="option"
-            :class="computeButtonClasses(value, index)"
-            @click="options[option.category] = value">
-            {{ value }}</button>
+            <button v-for="(value, index) in option.buttons" :key="value" class="option"
+                :class="computeButtonClasses(value, index)" @click="options[option.category] = value">
+                {{ value }}</button>
         </div>
     </div>
 </template>
@@ -19,7 +15,7 @@ interface OptionProps {
     option: {
         title: string;
         category: string;
-        buttons: Tool[] | Channel[];
+        buttons: Tool[] | Channel[] | String;
     }
     options: {
         tool: Tool;
@@ -41,7 +37,7 @@ const computeButtonClasses = (value, index) => {
 }
 </script>
 
-<style scope>
+<style scoped>
 .option-container {
   margin-bottom: 2rem;
 }
